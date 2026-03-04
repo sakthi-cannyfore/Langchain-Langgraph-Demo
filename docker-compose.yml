@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  rag-pipeline:
+    build: .
+    container_name: rag_csv_pipeline
+    stdin_open: true      
+    tty: true            
+    env_file:
+      - .env             
+    volumes:
+      - ./data:/app/data              
+      - ./vector_store:/app/vector_store  
