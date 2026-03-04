@@ -21,4 +21,4 @@ COPY . .
 
 RUN mkdir -p data vector_store
 
-CMD ["python", "langchain.py"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
